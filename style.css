@@ -13,39 +13,63 @@ body {
 header {
   background-color: #2b7799;
   color: white;
-  padding: 4px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 20px 40px;
 }
 
-header .logo {
-  font-size: 28px;
+.logo {
+  font-size: 50px;
   font-weight: bold;
   color: #ffe697;
 }
 
-.nav-links {
-  list-style: none;
+.main-comment {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #48767b;
+  margin: 14px;
+  padding: 20px;
+  display: flex;
+  height: 500px;
+  border-radius: 8px;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.2s ease;
+.title-comment {
+  font-size: 80px;
+  color: #fffce8;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 
-.nav-links li a:hover {
-  color: #ffe697;
+.info-comment {
+  font-size: 30px;
+  color: #fffce8;
+  font-weight: bold;
+}
+
+#teston-button {
+  border-radius: 8px;
+  background-color: #ffe697;
+  padding: 10px;
+  margin: 40px 10px;
+  border-color: transparent;
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#teston-button:hover {
+  background-color: #ffe690;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 footer {
   background-color: #2b7799;
   color: white;
   text-align: center;
+  margin-top: 50px;
   padding: 20px 0;
   font-size: 14px;
 }
@@ -99,15 +123,19 @@ h1 {
   text-overflow: ellipsis;
 }
 
-.search-box {
+#search-box {
   text-align: center;
   margin-top: 20px;
+  display: none;
+  background-color: #ffe690;
+  padding: 10px;
 }
 
 #search-input {
-  width: 300px;
+  width: 600px;
+  height: 40px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
@@ -116,6 +144,7 @@ h1 {
   padding: 10px 20px;
   font-size: 16px;
   margin-left: 10px;
+  height: 58px;
   border: none;
   background-color: #e26559;
   color: white;
@@ -132,7 +161,18 @@ h1 {
   overflow-x: auto;
   gap: 16px;
   padding: 16px 0;
+  margin: 0px 30px;
   scroll-snap-type: x mandatory;
+}
+
+.title {
+  margin: 10px 30px;
+  margin-top: 30px;
+  font-size: 35px;
+  padding: 10px;
+  background-color: #84b9c0;
+  border-radius: 8px;
+  color: aliceblue;
 }
 
 .movie-section::-webkit-scrollbar {

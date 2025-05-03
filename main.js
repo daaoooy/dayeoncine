@@ -1,3 +1,12 @@
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzM2ViMTRkODY3NDRjMTAwM2U4MWQzMWY3NTg5MGI4YyIsIm5iZiI6MS43NDYwODQzNzc5Njk5OTk4ZSs5LCJzdWIiOiI2ODEzMjIxOWY3OTc5OWUwNzBmYzZlZDAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.chRV3pmx8Ir0CDPFoahr_LSkAniVO1DWrHKn01mfZYw",
+  },
+};
+
 const API_KEY = "33eb14d86744c1003e81d31f75890b8c";
 
 function searchMovies(input) {
@@ -6,7 +15,7 @@ function searchMovies(input) {
   document.querySelector("#now-playing-box").style.display = "none";
   document.querySelector("#popular-box").style.display = "none";
 
-  fetch(url)
+  fetch(url, options)
     .then((res) => res.json())
     .then((data) => {
       let movies = data.results;
@@ -22,7 +31,7 @@ function searchMovies(input) {
         let title = movie.title;
         let overview = movie.overview;
         let poster_path = movie.poster_path;
-        let popularity = movie.popularity;
+        let budget = movie.budget;
         let image_url = poster_path
           ? `https://image.tmdb.org/t/p/w500${poster_path}`
           : "https://via.placeholder.com/500x750?text=No+Image";
@@ -32,7 +41,7 @@ function searchMovies(input) {
               <img src="${image_url}" alt="${title}">
               <h2>${title}</h2>
               <p>${overview}</p>
-              <p>⭐ ${popularity}</p>
+              <p>⭐ ${budget}</p>
             </div>
           `;
         movieList.innerHTML += temp_html;
@@ -42,7 +51,7 @@ function searchMovies(input) {
 
 function showNowPlaying() {
   let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko-KR&page=1`;
-  fetch(url)
+  fetch(url, options)
     .then((res) => res.json())
     .then((data) => {
       showMovies(data.results, "now-playing");
@@ -51,7 +60,7 @@ function showNowPlaying() {
 
 function showPopular() {
   let url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR&page=1`;
-  fetch(url)
+  fetch(url, options)
     .then((res) => res.json())
     .then((data) => {
       showMovies(data.results, "popular");
@@ -86,9 +95,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let searchButton = document.querySelector("#search-button");
   let searchInput = document.querySelector("#search-input");
+  let testButton = document.querySelector("#teston-button");
+
+  testButton.addEventListener("click", () => {
+    if (testButton.innerText === "검색 ON") {
+      document.querySelector("#search-box").style.display = "block";
+      testButton.innerText = "검색 OFF";
+    } else {
+      document.querySelector("#search-box").style.display = "none";
+      document.querySelector("#item-list").style.display = "none";
+      testButton.innerText = "검색 ON";
+    }
+  });
 
   searchButton.addEventListener("click", () => {
     let input = searchInput.value.trim();
+    document.querySelector("#item-list").style.display = "";
+
     searchMovies(input);
   });
 
