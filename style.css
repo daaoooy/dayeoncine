@@ -22,7 +22,7 @@ header {
   color: #ffe697;
 }
 
-.main-comment {
+.main-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,29 +49,19 @@ header {
   font-weight: bold;
 }
 
-#teston-button {
+.start-button {
   border-radius: 8px;
   background-color: #ffe697;
   padding: 10px;
   margin: 40px 10px;
   border-color: transparent;
-
   font-size: 30px;
   font-weight: bold;
 }
 
-#teston-button:hover {
+.start-button:hover {
   background-color: #ffe690;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-footer {
-  background-color: #2b7799;
-  color: white;
-  text-align: center;
-  margin-top: 50px;
-  padding: 20px 0;
-  font-size: 14px;
+  box-shadow: 0 6px 15px #00000088;
 }
 
 h1 {
@@ -79,7 +69,7 @@ h1 {
   color: #000000;
 }
 
-#item-list {
+.search-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
@@ -88,17 +78,23 @@ h1 {
   margin: 0 auto;
 }
 
+.search-list p {
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+}
+
 .item {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px #00000088;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 15px #00000088;
 }
 
 .item img {
@@ -123,7 +119,7 @@ h1 {
   text-overflow: ellipsis;
 }
 
-#search-box {
+.search-box {
   text-align: center;
   margin-top: 20px;
   display: none;
@@ -131,32 +127,32 @@ h1 {
   padding: 10px;
 }
 
-#search-input {
+.search-input {
   width: 600px;
   height: 40px;
   padding: 10px;
   font-size: 20px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #d2d2d2;
 }
 
-#search-button {
+.search-button {
   padding: 10px 20px;
   font-size: 16px;
   margin-left: 10px;
   height: 58px;
   border: none;
   background-color: #e26559;
-  color: white;
+  color: #ffffff;
   border-radius: 6px;
   cursor: pointer;
 }
 
-#search-button:hover {
+.search-button:hover {
   background-color: #e26560;
 }
 
-.movie-section {
+.movie-items {
   display: flex;
   overflow-x: auto;
   gap: 16px;
@@ -172,35 +168,25 @@ h1 {
   padding: 10px;
   background-color: #84b9c0;
   border-radius: 8px;
-  color: aliceblue;
-}
-
-.movie-section::-webkit-scrollbar {
-  height: 8px;
-}
-
-.movie-section::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 4px;
+  color: #d8eaff;
 }
 
 .movie {
   background-color: white;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px #00000088;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-
   flex: 0 0 auto;
   width: 200px;
-  scroll-snap-align: start;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px #00000088;
+  scroll-snap-align: start;
 }
 
 .movie:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 15px #00000088;
 }
 
 .movie img {
@@ -218,7 +204,7 @@ h1 {
 .movie p {
   font-size: 14px;
   margin: 0 8px 8px;
-  color: #555;
+  color: #555555;
   max-height: 60px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -230,7 +216,7 @@ h2 {
   font-size: 20px;
 }
 
-#modal {
+.detail-modal {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -239,23 +225,37 @@ h2 {
   width: 100%;
   height: 100%;
   background-color: #0808087e;
-  overflow: scroll;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #ffffff;
   margin: 10% auto;
+  width: 800px;
+  height: 550px;
+  overflow-y: auto;
   padding: 20px;
   border-radius: 8px;
-  width: 80%;
-  max-width: 600px;
   position: relative;
 }
 
 .back {
-  position: absolute;
-  right: 16px;
-  top: 10px;
-  font-size: 24px;
+  position: fixed;
+  right: 50px;
+  top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
   cursor: pointer;
+  z-index: 1100;
+}
+
+footer {
+  background-color: #2b7799;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px 0;
+  font-size: 14px;
 }
