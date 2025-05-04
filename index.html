@@ -12,42 +12,40 @@
       <h1 class="logo">DAYEONCINE</h1>
     </header>
 
-    <div class="main-comment">
+    <div class="main-box">
       <p class="title-comment">다연씨네 오신 것을 환영합니다</p>
       <p class="info-comment">
         강원대학교 Frontend Project 01 영화 검색 사이트 만들기!
       </p>
       <p class="info-comment">영화 검색을 시도해보세요.</p>
       <p class="info-comment">버튼을 누르면 검색창이 생깁니다.</p>
-      <button id="teston-button">검색 ON</button>
+      <button class="start-button">검색 ON</button>
     </div>
 
-    <div id="search-box">
+    <div class="search-box">
       <input
         type="text"
-        id="search-input"
+        class="search-input"
         placeholder="영화 제목을 입력하세요."
       />
-      <button id="search-button">검색</button>
+      <button class="search-button">검색</button>
     </div>
-    <div id="now-playing-box">
+    <div class="now-playing-box">
       <h2 class="title">현재 상영작</h2>
-      <div id="now-playing" class="movie-section"></div>
+      <div id="now-playing" class="movie-items"></div>
     </div>
 
-    <div id="popular-box">
+    <div class="popular-box">
       <h2 class="title">인기 영화</h2>
-      <div id="popular" class="movie-section"></div>
+      <div id="popular" class="movie-items"></div>
     </div>
 
-    <div id="item-list"></div>
+    <div class="search-list"></div>
 
-    <div id="modal">
+    <div class="detail-modal">
       <div class="modal-content">
         <span class="back">back</span>
-        <div id="modal-body">
-          <!-- 상세 정보가 여기에 들어감 -->
-        </div>
+        <div class="modal-body"></div>
       </div>
     </div>
 
