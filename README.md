@@ -12,3 +12,6 @@ https://stackoverflow.com/questions/36027666/getting-movie-image-from-tmdb
 
 [css에서 사용할 예쁜 색 조합]
 https://kr.pinterest.com/pin/812266482812268281/
+
+[스크롤]
+https://codingbroker.tistory.com/64
